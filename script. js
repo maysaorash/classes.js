@@ -1,0 +1,58 @@
+// Factory Functions
+function createUser (fName, lName, uName, eMail, pWord) {
+  const user = {
+    firstName: fName,
+    lastName: lName,
+    username: uName,
+    email:  eMail,
+    password: pWord,
+  }
+
+  return user;
+}
+
+class User {
+  constructor(fName, lName, uName, eMail, pWord) {
+    this.firstName = fName;
+    this.lastName = lName;
+    this.username = uName;
+    this.email =  eMail;
+    this._password = pWord;
+  }
+
+  get password () {
+    return 'You are not able to see the password.';
+  }
+
+  fullName() {
+    return this.firstName + ' ' + this.lastName;
+  }
+}
+
+
+
+// const john = createUser('John', 'Doe', 'jdoe', 'jdoe@example.com','123');
+// const jane = createUser('Jane', 'Doe', 'jnDoe', 'janed@example.com', '321');
+
+const john = new User('John', 'Doe', 'jdoe', 'jdoe@example.com','123');
+
+console.log(john.fullName())
+
+
+const user1 = {
+  firstName: 'John',
+  lastName: 'Doe',
+  username: 'jdoe',
+  email: 'johndoe@example.com',
+  password: '123',
+}
+
+const user2 = {
+  firstName: 'Jane',
+  lastName: 'Smith',
+  userName: 'jsmith',
+  emailAddress: 'janesmith@example.com',
+  password: '321',
+}
+
+console.log(user2.emailAddre
